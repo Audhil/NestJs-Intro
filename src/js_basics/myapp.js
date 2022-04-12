@@ -110,4 +110,27 @@ let res = Math.pow(4, 2);
 console.log(res); //  16
 res = 4 ** 2;
 console.log(res); //  16
-
+//  Relational operators
+console.log(5 > 6); //  false
+console.log(5 >= 6); //  false
+let s1 = 'Pen';
+let s2 = 'Book';
+console.log(s1 > s2); //  true - compares by each char
+let s3 = 'Pen';
+let s4 = 'Pencil';
+console.log(s3 > s4); //  false - compares by each char
+console.log(s3 < s4); //  true - compares by each char
+let s5 = '2';
+let s6 = 3;
+console.log(s5 > s6); //  false
+let ss = '3';
+let ss2 = 3;
+console.log(ss == ss2); //  true - this is not expected, both are different types, still it compares
+console.log(ss === ss2); //  false - this is the correct way of comparing - ALWAYS USE ===
+//  another caveat of ==
+let empty = '';
+let boo = false;
+console.log(empty == boo); //  true - this is due to type coercing - '' will get converted to false
+console.log(empty === boo); //  false - ALWAYS USE ===
+// == will check only value and ignores type
+// === will check both value & type
