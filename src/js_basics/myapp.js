@@ -134,3 +134,64 @@ console.log(empty == boo); //  true - this is due to type coercing - '' will get
 console.log(empty === boo); //  false - ALWAYS USE ===
 // == will check only value and ignores type
 // === will check both value & type
+//  Logical operators
+let a = 7,
+  b = 8,
+  c = 9;
+let result = a < b;
+console.log(result); //  true
+let logicalResult = a < b && a < c; //  &&, ||, ! etc
+console.log(logicalResult); //  true
+//  b is bigger
+if (a > b) console.log('a is bigger');
+else console.log('b is bigger');
+//  it is odd
+if (a % 2 === 0) console.log('it is even');
+else console.log('it is odd');
+//  ternary operator
+//  even
+console.log(b % 2 === 0 ? 'even' : 'odd');
+//  switch
+// let day = 'Sunday'; //  it is Sunday, weekend!
+let day = 'Friday'; //  it is weekday!
+switch (day) {
+  case 'Sunday':
+    console.log('it is Sunday, weekend!');
+    break;
+  case 'Monday':
+  case 'Tuesday':
+  case 'Wednesday':
+  case 'Thursday':
+  case 'Friday':
+    console.log('it is weekday!');
+    break;
+  case 'Saturday':
+    console.log('it is half weekday!');
+    break;
+}
+//  Template literal
+result = a + b;
+console.log(`the sum of ${a} and ${b} is ${result}`); //  the sum of 7 and 8 is 15
+// my name is
+// Mohammed Audhil
+console.log('my name is \nMohammed Audhil');
+console.log('another way of adding new line');
+
+// my name
+// is Mohammed Audhil
+console.log(`my name 
+is Mohammed Audhil`);
+//  while loop
+let dd = 1;
+while (dd < 5) {
+  console.log(`I'm smaller than 5, I'm is ${dd}`);
+  dd++;
+}
+do {
+  console.log(`now dd is ${dd}`);
+  dd--;
+} while (dd >= 0);
+for (let i = 0; i < 5; i++) {
+  console.log(`I is ${i}`);
+}
+for (;;) {} //  infinite loop
