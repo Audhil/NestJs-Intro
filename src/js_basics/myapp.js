@@ -78,3 +78,36 @@ console.log(y, typeof y); //  123 number
 y = 'M123 Audhil';
 y = parseInt(y);
 console.log(y, typeof y); //  NaN number
+//  Arithmetic operators
+let nn = 4;
+let nn2 = 2;
+console.log(nn + nn2); //  6
+console.log(nn - nn2); //  2
+console.log(nn * nn2); //  8
+console.log(nn / nn2); //  2
+console.log(nn % nn2); //  0
+//  again type coercion
+let on1 = true;
+let on2 = true;
+console.log(on1 + on2); //  2 (truthy/falsy values - 0 is false, 1 is true)
+let num11 = 2;
+num11 = num11 + 2;
+console.log(num11); //  4
+num11 += 2;
+console.log(num11); //  6
+num11++; //  post increment
+console.log(num11); //  7
+++num11; //  pre increment
+console.log(num11); //  8
+num11--; //  post decrement
+console.log(num11); //  7
+--num11; //  pre decrement
+console.log(num11); //  6
+let x1 = num11++;
+console.log(x1, num11); //  6 7
+//  find cube of number
+let res = Math.pow(4, 2);
+console.log(res); //  16
+res = 4 ** 2;
+console.log(res); //  16
+
