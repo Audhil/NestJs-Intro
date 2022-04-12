@@ -35,3 +35,46 @@ console.log(typeof anotherUser); //  undefined - equal to NULL in Java?
 let d = 9;
 console.log(d / 'audhil'); //  NaN - not a number
 console.log(typeof (d / 'audhil')); //  number
+//  type conversion
+let num1 = 9;
+console.log(num1, typeof num1); //  9 number
+let num2 = String(9);
+console.log(num2, typeof num2); //  9 string
+let num3 = Number('9');
+console.log(num3, typeof num3); //  9 number
+//   type coercion
+let x;
+console.log(x, typeof x); //  undefined undefined
+x = 8;
+console.log(x, typeof x); //  8 number
+x = x + '';
+console.log(x, typeof x); //  8 string
+x = x - 2;
+console.log(x, typeof x); //  6 number
+x = x + '';
+x = x + 2;
+console.log(x, typeof x); //  62 string
+x = +x + 1; //  unary operator converts string to number
+console.log(x, typeof x); //  63 number
+x = x + '';
+x = -x + 1; //  unary operator converts string to number
+console.log(x, typeof x); //  -62 number
+x = !x;
+console.log(x, typeof x); //  false boolean
+//  truthy & falsy values
+console.log(Boolean(9)); //  true
+console.log(Boolean(-9)); //  true
+console.log(Boolean(0)); //  false
+console.log(Boolean(null)); //  false
+console.log(Boolean(undefined)); //  false
+console.log(Boolean('audhil')); //  true
+let y = '123 Audhil';
+console.log(y, typeof y); //  123 Audhil string
+y = Number(y);
+console.log(y, typeof y); //  NaN number
+y = '123 Audhil';
+y = parseInt(y);
+console.log(y, typeof y); //  123 number
+y = 'M123 Audhil';
+y = parseInt(y);
+console.log(y, typeof y); //  NaN number
