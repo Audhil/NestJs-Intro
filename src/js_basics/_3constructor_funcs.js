@@ -19,7 +19,7 @@ function Audhil(name, tech) {
   this.work = function (time) {
     console.log(`Audhil works for ${time} hrs`);
   };
-  return 9; //  any other return value will get ignored in constructor functions, other than objects
+  return 9; //  any return values will be ignored, otherthan "this"
 }
 
 let aa = new Audhil('mohammed', 'Java');
