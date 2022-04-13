@@ -26,3 +26,11 @@ console.log('using for each loop');
 map.forEach((v, k) => {
   console.log(`key : ${k}, value: ${v}`);
 });
+
+// let num = 0;
+// function show() {
+//   console.log(num);
+//   num++;
+//   show();
+// }
+// show();
