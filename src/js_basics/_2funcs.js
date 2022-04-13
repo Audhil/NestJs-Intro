@@ -23,3 +23,16 @@ console.log(res); //  6
 let sum = add;
 console.log(sum); //  [Function: add]
 console.log(sum(4, 5)); //  9
+//  default values to params
+let add2 = function (a, b, c = 3) {
+  console.log(a, b, c);
+  return a + b + c;
+};
+console.log(add2(1, 2)); //  6
+//  arrow function
+let arFunc1 = (a, b) => {
+  return a + b;
+};
+console.log(arFunc1(1, 2)); //  3
+let arFunc2 = (a, b) => a - b;
+console.log(arFunc2(19, 3)); //  16
