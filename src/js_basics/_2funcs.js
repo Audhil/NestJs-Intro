@@ -36,3 +36,13 @@ let arFunc1 = (a, b) => {
 console.log(arFunc1(1, 2)); //  3
 let arFunc2 = (a, b) => a - b;
 console.log(arFunc2(19, 3)); //  16
+//  object methods
+let laptop = {
+  cpu: 'i9',
+  ram: 16,
+  brand: 'HP',
+  greet: function () {
+    console.log('Hello Monkey!');
+  },
+};
+laptop.greet(); //  Hello Monkey!
