@@ -46,3 +46,38 @@ let laptop = {
   },
 };
 laptop.greet(); //  Hello Monkey!
+
+let laptop2 = {
+  cpu: 'i8',
+  ram: 24,
+  brand: 'Apple',
+  getConfig: function () {
+    console.log(`laptop config is : ${this.cpu}, ${this.ram}, ${this.brand}`);
+  },
+  compare: function (laptop) {
+    if (this.cpu > laptop.cpu) return this;
+    else return laptop;
+  },
+};
+laptop2.getConfig(); //  laptop config is : i8, 24, Apple
+//  { cpu: 'i9', ram: 16, brand: 'HP', greet: [Function: greet] }
+if (laptop.cpu > laptop2.cpu) console.log(laptop);
+else console.log(laptop2);
+let laptop3 = {
+  cpu: 'i3',
+  ram: 2,
+  brand: 'ASUS',
+  getConfig: function () {
+    console.log(`laptop config is : ${this.cpu}, ${this.ram}, ${this.brand}`);
+  },
+};
+/*
+  * {
+    cpu: 'i8',
+    ram: 24,
+    brand: 'Apple',
+    getConfig: [Function: getConfig],
+    compare: [Function: compare]
+  }
+*/
+console.log(laptop2.compare(laptop3));
