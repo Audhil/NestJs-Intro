@@ -91,3 +91,35 @@ console.log('display values');
 *   16
 */
 for (let key in nums) console.log(nums[key]);
+//  array destructuring
+let vals = [1, 2, 3, 4];
+let [a, b, c, d] = vals;
+console.log(a, b, c, d); //  1 2 3 4
+let [aa, bb, , dd] = vals;
+console.log(aa, bb, dd); //  1 2 4
+//  swapping like a magic
+let a1 = 8;
+let b1 = 9;
+console.log(a1, b1); //  8 9
+[a2, b2] = [b1, a1];
+console.log(a2, b2); //  9 8
+let words = 'My name is Mohammed Audhil'.split(' ');
+console.log(words); //  [ 'My', 'name', 'is', 'Mohammed', 'Audhil' ]
+let [p, q, r, s, t] = words;
+console.log(p, q, r, s, t); //  My name is Mohammed Audhil
+let anotherWords =
+  'Jack and jill went up the hill, to fetch a pail of water'.split(' ');
+let [x, y, ...z] = anotherWords;
+console.log(x); //  Jack
+console.log(y); //  and
+/*
+[
+  'jill',  'went',
+  'up',    'the',
+  'hill,', 'to',
+  'fetch', 'a',
+  'pail',  'of',
+  'water'
+]
+*/
+console.log(z); //
