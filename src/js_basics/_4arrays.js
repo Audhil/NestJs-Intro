@@ -123,3 +123,81 @@ console.log(y); //  and
 ]
 */
 console.log(z); //
+//  Array forEach Method in JavaScript
+console.log('forEach method');
+let vv = [41, 34, 434, 55, 2, 7, 77, 8];
+/*
+  41
+  34
+  434
+  55
+  2
+  7
+  77
+  8
+*/
+vv.forEach((n) => {
+  console.log(n);
+});
+/*
+*
+* 41 0 [
+  41, 34, 434, 55,
+   2,  7,  77,  8
+]
+34 1 [
+  41, 34, 434, 55,
+   2,  7,  77,  8
+]
+434 2 [
+  41, 34, 434, 55,
+   2,  7,  77,  8
+]
+55 3 [
+  41, 34, 434, 55,
+   2,  7,  77,  8
+]
+2 4 [
+  41, 34, 434, 55,
+   2,  7,  77,  8
+]
+7 5 [
+  41, 34, 434, 55,
+   2,  7,  77,  8
+]
+77 6 [
+  41, 34, 434, 55,
+   2,  7,  77,  8
+]
+8 7 [
+  41, 34, 434, 55,
+   2,  7,  77,  8
+]
+*/
+vv.forEach((n, index, nums) => {
+  console.log(n, index, nums);
+});
+console.log('filter map reduce method');
+console.log(vv.filter((n) => n % 2 === 0)); //  [ 34, 434, 2, 8 ]
+console.log('looping after filter');
+/*
+   34 0 [ 34, 434, 2, 8 ]
+  434 1 [ 34, 434, 2, 8 ]
+    2 2 [ 34, 434, 2, 8 ]
+    8 3 [ 34, 434, 2, 8 ]
+*/
+vv.filter((n) => n % 2 === 0).forEach((n, index, nums) => {
+  console.log(n, index, nums);
+});
+console.log('using map');
+vv.filter((n) => n % 2 === 0)
+  .map((n) => n * 2)
+  .forEach((n, index, nums) => {
+    console.log(n, index, nums);
+  });
+console.log('using reduce');
+let reduceResult = vv
+  .filter((n) => n % 2 === 0)
+  .map((n) => n * 2)
+  .reduce((a, b) => a + b);
+console.log(reduceResult); //  956
