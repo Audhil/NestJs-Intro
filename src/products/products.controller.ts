@@ -1,5 +1,6 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ProductsService } from './products.service';
+import { Product } from './product.model';
 
 @Controller('products')
 export class ProductsController {
@@ -18,5 +19,10 @@ export class ProductsController {
       prodPrice,
     );
     return { id: generatedId };
+  }
+
+  @Get()
+  getAllProducts(): Product[] {
+    return this.productService.getProducts();
   }
 }

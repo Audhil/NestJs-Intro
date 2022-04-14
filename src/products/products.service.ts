@@ -11,4 +11,8 @@ export class ProductsService {
     this.products.push(newProduct);
     return prodId;
   }
+
+  getProducts() {
+    return [...this.products]; //  makes a new array with items of products[], ... is known as spread operator
+  }
 }
