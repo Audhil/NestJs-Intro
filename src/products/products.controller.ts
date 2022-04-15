@@ -8,20 +8,21 @@ import {
   Post,
 } from '@nestjs/common';
 import { ProductsService } from './products.service';
-import { Product } from './product.model';
 
 @Controller('products')
 export class ProductsController {
   constructor(private readonly productService: ProductsService) {}
 
   @Post()
-  addProduct(
-    // @Body() completeBody: { title: string; description: string; price: number }, //  another way of passing param
+  async addProduct(
     @Body('title') prodTitle: string,
     @Body('description') prodDescription: string,
     @Body('price') prodPrice: number,
-  ): { id: string } {
-    const generatedId: string = this.productService.insertProduct(
+  ) {
+    console.log(
+      `addProduct: title: ${prodTitle}, desc: ${prodDescription}, price: ${prodPrice}`,
+    );
+    const generatedId: string = await this.productService.insertProduct(
       prodTitle,
       prodDescription,
       prodPrice,
@@ -30,29 +31,34 @@ export class ProductsController {
   }
 
   @Get()
-  getAllProducts(): Product[] {
-    return this.productService.getProducts();
+  async getAllProducts() {
+    return await this.productService.getProducts();
   }
 
   @Get(':id')
-  getProduct(@Param('id') prodId: string): Product {
-    return this.productService.getProductById(prodId);
+  async getProduct(@Param('id') prodId: string) {
+    return await this.productService.getProductById(prodId);
   }
 
   @Patch(':id')
-  updateProduct(
+  async updateProduct(
     @Param('id') prodId: string,
     @Body('title') prodTitle: string,
     @Body('description') prodDesc: string,
     @Body('price') prodPrice: number,
   ) {
-    this.productService.updateProduct(prodId, prodTitle, prodDesc, prodPrice);
+    await this.productService.updateProduct(
+      prodId,
+      prodTitle,
+      prodDesc,
+      prodPrice,
+    );
     return null;
   }
 
   @Delete(':id')
-  removeProduct(@Param('id') prodId: string) {
-    this.productService.deleteProduct(prodId);
+  async removeProduct(@Param('id') prodId: string) {
+    await this.productService.deleteProduct(prodId);
     return null;
   }
 }
